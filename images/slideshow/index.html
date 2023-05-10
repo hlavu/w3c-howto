@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive slide show</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="slide-show-container">
+        <!-- img item -->
+        <div class="slide-img">
+          <div class="number">1/4</div>
+          <img src="../img/img1.jpg" alt="img1" />
+          <div class="caption">Forest Road Autumn Trees</div>
+        </div>
+        <div class="slide-img">
+          <div class="number">2/4</div>
+          <img src="../img/img2.jpg" alt="img2" />
+          <div class="caption">Rice Terraces Farming Fields</div>
+        </div>
+        <div class="slide-img">
+          <div class="number">3/4</div>
+          <img src="../img/img3.jpg" alt="img3" />
+          <div class="caption">Lake Italy</div>
+        </div>
+        <div class="slide-img">
+          <div class="number">4/4</div>
+          <img src="../img/img4.jpg" alt="img4" />
+          <div class="caption">Lavender Flower Field Sunset</div>
+        </div>
+
+        <!-- control buttons -->
+        <a class="next btn" onclick="nextBtnHandle()">
+          <i class="bx bx-chevron-right"></i>
+        </a>
+        <a class="prev btn" onclick="prevBtnHandle()">
+          <i class="bx bx-chevron-left"></i>
+        </a>
+      </div>
+
+      <div class="circle-dot">
+        <span onclick="circleBtnHandle(0)" class="dot"></span>
+        <span onclick="circleBtnHandle(1)" class="dot"></span>
+        <span onclick="circleBtnHandle(2)" class="dot"></span>
+        <span onclick="circleBtnHandle(3)" class="dot"></span>
+      </div>
+    </div>
+    <script>
+      let currentIdx = 0;
+      let slideImg = document.querySelectorAll(".slide-img");
+      let circleBtn = document.querySelectorAll(".dot");
+
+      const nextBtnHandle = () => {
+        slideShow(currentIdx, ++currentIdx);
+      };
+      const prevBtnHandle = () => {
+        slideShow(currentIdx, --currentIdx);
+      };
+      const circleBtnHandle = (id) => {
+        slideShow(currentIdx, (currentIdx = id));
+      };
+      const slideShow = (prevIdx, curIdx) => {
+        if (curIdx === 4) {
+          currentIdx = 0;
+        }
+        if (curIdx === -1) {
+          currentIdx = 3;
+        }
+
+        prevIdx >= 0
+          ? (slideImg[prevIdx].style.display = "none") &&
+            circleBtn[prevIdx].classList.remove("active")
+          : "";
+        slideImg[currentIdx].style.display = "block";
+        circleBtn[currentIdx].classList.add("active");
+      };
+      slideShow(-1, currentIdx);
+    </script>
+  </body>
+</html>
