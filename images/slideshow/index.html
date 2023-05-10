@@ -56,6 +56,7 @@
       let currentIdx = 0;
       let slideImg = document.querySelectorAll(".slide-img");
       let circleBtn = document.querySelectorAll(".dot");
+      let nextBtn = document.querySelector(".next");
 
       const nextBtnHandle = () => {
         slideShow(currentIdx, ++currentIdx);
@@ -82,6 +83,11 @@
         circleBtn[currentIdx].classList.add("active");
       };
       slideShow(-1, currentIdx);
+
+      // auto slide show
+      setInterval(() => {
+        nextBtn.click();
+      }, 3000);
     </script>
   </body>
 </html>
