@@ -4,12 +4,42 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+body {
+  background: #eee;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.header span {
+  display: inline-block;
+  margin: 15px 4px 8px;
+  font-size: 20px;
+}
+
+.header label {
+  font-size: 22px;
+}
+
+.btn {
+  font-size: 22px;
+  background: #222;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.grid-img {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
-  height: 100vh;
-  background: #eee;
 }
 
 .grid-column {
