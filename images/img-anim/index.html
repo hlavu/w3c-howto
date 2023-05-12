@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="flip-box">
+        <div class="flip-card">
+          <p>Flip card text</p>
+          <div class="flip-card-inner">
+            <div class="card-front">
+              <img src="../img/sangyan.jpg" alt="sangyan" />
+            </div>
+            <div class="card-back">
+              <span>Sangyan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-img">
+          <p>Flip card image</p>
+          <div class="flip-img-inner">
+            <div class="img-front">
+              <img src="../img/sangyan1.jpg" alt="sangyan" />
+            </div>
+            <div class="img-back">
+              <img src="../img/fanfan.jpg" alt="fanfan" />
+            </div>
+          </div>
+        </div>
+
+        <div class="shake-img">
+          <p>Shake image</p>
+          <div class="img-box">
+            <img src="../img/sangyan.jpg" alt="sangyan" />
+          </div>
+        </div>
+      </div>
+
+      <div class="compare-box">
+        <h2>Image Comparison Slider</h2>
+        <p>Move the pink slider to compare images.</p>
+        <div class="img-comp-box">
+          <div class="img-comp-item">
+            <img src="../img/fanfan.jpg" alt="fanfan" />
+          </div>
+          <div class="comp-slider"></div>
+          <div class="img-comp-item comp-overlay">
+            <img src="../img/sangyan1.jpg" alt="sangyan" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.querySelector(".comp-slider");
+      // gets 2nd image
+      const overlay = document.querySelector(".comp-overlay");
+      // gets width & height of the image
+      const w = overlay.offsetWidth;
+      const h = overlay.offsetHeight;
+
+      const getCursorPos = (e) => {
+        let imgPos = overlay.getBoundingClientRect();
+        // e.pageX: distance from cursor to screen
+        // imgPos.left: distance from img to screen
+        let cursorPos = e.pageX - imgPos.left;
+        return cursorPos;
+      };
+
+      function slide(newPos) {
+        // resize image
+        overlay.style.width = newPos + "px";
+        // reposition cursor
+        slider.style.left = overlay.offsetWidth - slider.offsetWidth / 2 + "px";
+      }
+
+      const slideMove = (e) => {
+        // gets cursor's position
+        let pos = getCursorPos(e);
+        // prevent the slider from being positioned outside the image
+        if (pos < 0) pos = 0;
+        if (pos > w) pos = w;
+        slide(pos);
+      };
+
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+
+      function compareImages() {
+        // reduces width of 2nd picture to 50%
+        overlay.style.width = w / 2 + "px";
+        /*position the slider in the middle:*/
+        slider.style.top = h / 2 - slider.offsetHeight / 2 + "px";
+        slider.style.left = w / 2 - slider.offsetWidth / 2 + "px";
+      }
+
+      compareImages();
+    </script>
+  </body>
+</html>
