@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.wrapper {
+  height: 100vh;
+}
+
+.hero-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/iu.jpg");
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.name {
+  font-size: 12rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 2rem;
+  margin: 30px 0 20px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+/* blur img */
+.blur-bg {
+  height: 100%;
+  position: relative;
+  color: #fff;
+}
+
+.bg-img {
+  background: url("../img/iu.jpg");
+  /* make bg blur */
+  filter: blur(8px);
+}
+
+.blur-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 3px solid #eee;
+  width: 60%;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.form-on-img {
+  background: #fff;
+  background-image: url("../img/img6.jpg");
+}
+
+form {
+  background: #fff;
+  width: 300px;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+form span {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+form input {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  background: #eee;
+  outline: none;
+}
+
+.f-btn {
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  padding: 10px 0;
+  background: #333;
+  color: #eee;
+  cursor: pointer;
+}
+
+.f-btn:hover {
+  opacity: 0.7;
+}
+/* set image bg */
+
+.hero-img,
+.bg-img,
+.form-on-img {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 5px;
+  }
+  p {
+    font-size: 4rem;
+  }
+
+  .btn {
+    font-size: 3rem;
+  }
+
+  .blur-content {
+    width: 70%;
+  }
+
+  form {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bg-text {
+    width: 80%;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 3px;
+  }
+
+  p {
+    font-size: 5rem;
+  }
+
+  .btn {
+    font-size: 4rem;
+  }
+
+  .blur-content {
+    width: 80%;
+  }
+}
