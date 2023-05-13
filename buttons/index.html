@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="split-content container">
+        <p>1. Split button</p>
+        <div class="split-btn">
+          <button class="btn btn-1">Button</button>
+          <div class="dropdown">
+            <button class="btn btn-2"><i class="bx bxs-down-arrow"></i></button>
+            <ul class="dropdown-content">
+              <li>Link 1</li>
+              <li>Link 2</li>
+              <li>Link 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p>2. Animated buttons</p>
+        <div class="animated-btn">
+          <div class="pressed-effect">
+            <p>Pressed effect on click</p>
+            <button class="btn">Click</button>
+          </div>
+
+          <div class="arrow-hover">
+            <p>Arrow on hover</p>
+            <button class="btn"><span>Hover</span></button>
+          </div>
+
+          <div class="ripple-click">
+            <p>Ripple effect on click</p>
+            <button class="btn">Click me</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p>3. Loading buttons</p>
+        <div class="loading-btn">
+          <!-- fa-spin rotates icons -->
+          <button class="btn">
+            <i class="fa fa-spinner fa-spin"></i>
+            Loading
+          </button>
+          <button class="btn">
+            <i class="fa fa-circle-o-notch fa-spin"></i>Loading
+          </button>
+          <button class="btn">
+            <i class="fa fa-refresh fa-spin"></i>Loading
+          </button>
+        </div>
+      </div>
+
+      <div class="container">
+        <p>4. Notification button</p>
+        <div class="noti-btn">
+          <button class="btn">Inbox</button>
+          <span class="badge">4</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background: #333;
+  height: 100vh;
+  color: #eee;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.container {
+  padding: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.split-btn {
+  display: flex;
+  color: #333;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  font-size: 18px;
+}
+
+.split-btn .btn {
+  font-size: 18px;
+  padding: 10px 15px;
+  background: #d6e3b0;
+  transition: 0.2s;
+}
+
+.split-btn .btn:hover {
+  background: #c9dbb2;
+}
+
+.btn-2 i {
+  font-size: 10px;
+}
+
+.btn-1 {
+  border-right: 1px solid #333;
+}
+.btn-2 {
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+}
+
+.dropdown-content li {
+  list-style: none;
+  width: 120px;
+  padding: 10px;
+  cursor: pointer;
+  background: #aac8a7;
+
+  transition: 0.3s;
+}
+
+.dropdown-content li:hover {
+  background: #e3f2c1;
+}
+
+/* animated btn */
+
+.animated-btn {
+  display: flex;
+}
+
+.animated-btn div {
+  text-align: center;
+}
+
+.animated-btn div ~ div {
+  margin-left: 20px;
+}
+
+.animated-btn p {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.animated-btn .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.pressed-effect .btn {
+  background: rgb(233, 51, 51);
+  border-radius: 15px;
+  box-shadow: 0 5px #ccc;
+}
+
+.pressed-effect .btn:hover {
+  opacity: 0.8;
+}
+.pressed-effect .btn:active {
+  box-shadow: 0 2px #ccc;
+  transform: translateY(3px);
+}
+
+.arrow-hover .btn {
+  border-radius: 4px;
+  background: orange;
+  width: 100px;
+}
+
+.arrow-hover span {
+  position: relative;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.arrow-hover .btn:hover span:after {
+  right: 0px;
+  opacity: 1;
+}
+.arrow-hover .btn:hover span {
+  padding-right: 15px;
+}
+
+.arrow-hover span:after {
+  content: "\00bb";
+  display: inline-block;
+  position: absolute;
+  right: -20px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.ripple-click .btn {
+  background: #2a701c;
+  position: relative;
+}
+
+.ripple-click .btn:active:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.ripple-click .btn:after {
+  content: "";
+  transition: 0.2s;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  top: 100%;
+  width: 0;
+  left: 0;
+}
+
+/* Loading btn */
+.loading-btn .btn {
+  background: #f9ff86;
+}
+
+.loading-btn .fa {
+  margin-right: 6px;
+}
+
+.loading-btn button ~ button {
+  margin-left: 20px;
+}
+
+/* noti btn */
+
+.noti-btn {
+  position: relative;
+  max-width: fit-content;
+}
+
+.noti-btn .btn {
+  border: 2px solid #eee;
+  background: #555;
+  color: #ddd;
+  width: 90px;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #ff0909;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 50%;
+}
