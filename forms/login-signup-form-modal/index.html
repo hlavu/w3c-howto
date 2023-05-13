@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login, Sign Up Form Modal</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="modal-form container">
+        <button class="btn login" title="Click to open login form">
+          Login
+        </button>
+        <button class="btn sign-up" title="Click to open sign up form">
+          Sign up
+        </button>
+
+        <div class="modal for-login">
+          <div class="login-modal">
+            <div class="login-modal-body">
+              <div class="user-avt"></div>
+              <p>Username</p>
+              <input type="text" placeholder="Enter Username" />
+              <p>Password</p>
+              <input type="password" placeholder="Enter Password" />
+
+              <button class="modal-login-btn btn">Login</button>
+              <div class="input-control-group">
+                <input type="checkbox" name="remember" id="remember" checked />
+                <label for="remember">Remember me</label>
+              </div>
+            </div>
+            <span class="btn close-btn"><i class="fa-solid fa-xmark"></i></span>
+            <div class="login-modal-footer">
+              <button class="btn cancel-btn">Cancel</button>
+              <span class="hide">Forget <a href="#">password?</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal for-signup">
+          <div class="signup-modal">
+            <div class="signup-modal-header">
+              <h2>Sign Up</h2>
+              <span>Please fill in this form to create an account.</span>
+            </div>
+            <div class="signup-modal-body">
+              <p>Email</p>
+              <input type="text" placeholder="Enter email" />
+              <p>Password</p>
+              <input type="password" placeholder="Enter password" />
+              <p>Repeat Password</p>
+              <input type="password" placeholder="Repeat password" />
+              <div class="input-control-group">
+                <input
+                  type="checkbox"
+                  name="remember"
+                  id="remember-su"
+                  checked
+                />
+                <label for="remember-su">Remember me</label>
+              </div>
+              <span>
+                By creating an account you agree to our
+                <a href="#">Terms & Privacy</a>.
+              </span>
+              <span class="btn close-btn"
+                ><i class="fa-solid fa-xmark"></i
+              ></span>
+
+              <div class="sign-up-modal-btn-group">
+                <button class="btn cancel-btn">Cancel</button
+                ><button class="btn signup-btn">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const modalContainer = document.querySelectorAll(".modal");
+      // login
+      const loginBtn = document.querySelector(".btn.login");
+      const loginModal = document.querySelector(".modal.for-login");
+      const closeLogin = document.querySelector(".login-modal .close-btn");
+      const cancelLogin = document.querySelector(".login-modal .cancel-btn");
+      // sign up
+      const signUpBtn = document.querySelector(".btn.sign-up");
+      const signUpModal = document.querySelector(".modal.for-signup");
+      const closeSignUp = document.querySelector(".signup-modal .close-btn");
+      const cancelSignUp = document.querySelector(".signup-modal .cancel-btn");
+
+      // close modal when overlay box is clicked
+      modalContainer.forEach((modal) => {
+        modal.addEventListener("click", function (e) {
+          if (e.target === this) {
+            signUpModal.style.display = "none";
+            loginModal.style.display = "none";
+          }
+        });
+      });
+
+      //   handle login modal
+      loginBtn.addEventListener("click", () => {
+        loginModal.style.display = "block";
+      });
+
+      closeLogin.addEventListener("click", () => {
+        loginModal.style.display = "none";
+      });
+
+      cancelLogin.addEventListener("click", () => {
+        closeLogin.click();
+      });
+
+      // handle sign up modal
+      signUpBtn.addEventListener("click", () => {
+        signUpModal.style.display = "block";
+      });
+      closeSignUp.addEventListener("click", () => {
+        signUpModal.style.display = "none";
+      });
+
+      cancelSignUp.addEventListener("click", () => {
+        closeSignUp.click();
+      });
+    </script>
+  </body>
+</html>

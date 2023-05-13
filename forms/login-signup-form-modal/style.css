@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2c3e50;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+.container {
+  padding: 20px;
+}
+
+.container p {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.modal-form > .btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  width: 120px;
+  margin-right: 20px;
+  color: #333;
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  display: none;
+}
+
+.modal input {
+  padding: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.login-modal,
+.signup-modal {
+  background: #fff;
+  width: 500px;
+  max-width: 100%;
+  margin: 65px auto;
+  position: relative;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+  transition: 1s;
+  animation: zoomIn ease 0.8s;
+}
+
+/* log in modal */
+
+.login-modal-body {
+  padding: 20px;
+}
+
+.user-avt {
+  background: url("../../images/img/sangyan.jpg");
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.login-modal p {
+  font-size: 18px;
+  margin: 15px 0 0;
+}
+
+.login-modal-body > input {
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.modal-login-btn {
+  width: 100%;
+  background: #13801e;
+  color: #fff;
+  padding: 8px 0;
+  margin: 20px 0;
+}
+
+.input-control-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close-btn i {
+  font-size: 24px;
+}
+
+.login-modal-footer {
+  background: #f1f1f1;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.login-modal-footer .cancel-btn {
+  padding: 10px 16px;
+  border-radius: 4px;
+  background: #c00d0d;
+  color: #fff;
+}
+
+.login-modal-footer .cancel-btn:hover {
+  background: #489550;
+  opacity: 1;
+}
+
+.login-modal-footer a {
+  color: #000;
+}
+
+/* sign up modal */
+.signup-modal-header {
+  padding: 30px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+.signup-modal-header h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.signup-modal-body {
+  padding: 25px 20px;
+}
+
+.signup-modal p {
+  font-size: 18px;
+  margin: 15px 0 4px;
+}
+
+.signup-modal-body > input {
+  width: 100%;
+}
+
+.signup-modal-body .input-control-group {
+  margin: 15px 0;
+}
+
+.signup-modal a {
+  color: #0e7f5b;
+}
+
+.sign-up-modal-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sign-up-modal-btn-group .btn {
+  width: 50%;
+  padding: 10px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.signup-modal .btn:hover {
+  opacity: 1;
+}
+
+.signup-modal .cancel-btn {
+  background: #fb2222;
+}
+.signup-modal .signup-btn {
+  background: #13801e;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 500px) {
+  .hide {
+    display: none;
+  }
+
+  .sign-up-modal-btn-group .btn {
+    width: 100%;
+  }
+}
