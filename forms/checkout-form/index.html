@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Responsive checkout form</h1>
+      <div class="form-box">
+        <div class="form-content">
+          <div class="form-body">
+            <form action="#" class="bill-form">
+              <p>Billing Address</p>
+
+              <div class="form-control-group">
+                <label for="name"> <i class="fa fa-user"></i>Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Sang Yan"
+                />
+              </div>
+              <div class="form-control-group">
+                <label for="email"> <i class="fa fa-envelope"></i>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="sangyan@dev.com"
+                />
+              </div>
+              <div class="form-control-group">
+                <label for="address">
+                  <i class="fa fa-address-card-o"></i>Address</label
+                >
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="3 Denmark Street"
+                />
+              </div>
+              <div class="form-control-group">
+                <label for="name">
+                  <i class="fa fa-institution"></i> City</label
+                >
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  placeholder="Toronto"
+                />
+              </div>
+              <div class="form-control-group">
+                <div class="form-control-group__hw">
+                  <label for="state">State</label>
+                  <input type="text" name="state" id="state" placeholder="ON" />
+                </div>
+                <div class="form-control-group__hw">
+                  <label for="zip">Zip</label>
+                  <input type="text" name="zip" id="zip" placeholder="100001" />
+                </div>
+              </div>
+            </form>
+
+            <form action="#" class="pay-form">
+              <p>Payment</p>
+
+              <div class="form-control-group">
+                <label>Accepted cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color: navy"></i>
+                  <i class="fa fa-cc-amex" style="color: blue"></i>
+                  <i class="fa fa-cc-mastercard" style="color: red"></i>
+                  <i class="fa fa-cc-discover" style="color: orange"></i>
+                </div>
+              </div>
+              <div class="form-control-group">
+                <label>Name on Cards</label>
+                <input type="text" placeholder="Sang Yan" />
+              </div>
+              <div class="form-control-group">
+                <label>Credit card number</label>
+                <input type="text" placeholder="1111-2222-3333-4444" />
+              </div>
+              <div class="form-control-group">
+                <label>Exp Month</label>
+                <input type="text" placeholder="November" />
+              </div>
+              <div class="form-control-group">
+                <div class="form-control-group__hw">
+                  <label>Exp Year</label>
+                  <input type="text" placeholder="2029" />
+                </div>
+                <div class="form-control-group__hw">
+                  <label>CVV</label>
+                  <input type="text" placeholder="123" />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="form-control-group_hw checkbox">
+            <input type="checkbox" checked id="check-box" />
+            <label for="check-box">Shipping address same as billing</label>
+          </div>
+
+          <button class="btn">Continue to checkout</button>
+        </div>
+        <div class="cart">
+          <div class="cart-item header">
+            <span>Cart</span>
+            <span class="cart-icon"> <i class="fa fa-shopping-cart"></i>4</span>
+          </div>
+          <div class="cart-item">
+            <span class="title">Item 1</span>
+            <span class="qty">$2</span>
+          </div>
+          <div class="cart-item item">
+            <span class="title">Item 2</span> <span class="qty">$15</span>
+          </div>
+          <div class="cart-item item">
+            <span class="title">Item 3</span> <span class="qty">$5</span>
+          </div>
+          <div class="cart-item item">
+            <span class="title">Item 4</span> <span class="qty">$8</span>
+          </div>
+          <hr />
+          <div class="cart-item total">
+            <span>Total</span> <span class="total-qty">$30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

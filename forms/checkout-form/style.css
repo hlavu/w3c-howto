@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.wrapper h1 {
+  text-align: center;
+}
+
+.form-box {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin-top: 20px;
+  gap: 40px;
+}
+
+/* form */
+
+.form-content {
+  flex: 1;
+  padding: 30px;
+}
+.form-body {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  gap: 40px;
+}
+
+form {
+  flex: 45%;
+}
+
+form p {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+form input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  width: 100%;
+}
+
+form label > i,
+.fa-shopping-cart {
+  margin-right: 4px;
+}
+
+form label {
+  display: inline-block;
+  font-size: 18px;
+  margin: 20px 0 8px;
+}
+
+.form-control-group:last-child {
+  display: flex;
+  gap: 30px;
+}
+
+.form-control-group__hw {
+  flex: 1;
+}
+
+.checkbox {
+  margin: 30px 0;
+}
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  background: #333;
+  color: #ddd;
+  padding: 15px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* pay form */
+
+.icon-container {
+  padding: 11px 0;
+}
+
+.icon-container .fa {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.icon-container .fa ~ .fa {
+  margin-left: 10px;
+}
+
+.form-content,
+.cart {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+/* cart */
+.cart {
+  flex-basis: 20%;
+  height: fit-content;
+  align-self: flex-end;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.cart-item.header span:first-child {
+  font-size: 24px;
+}
+
+.cart-item .title {
+  color: blue;
+  cursor: pointer;
+}
+.cart-item .qty {
+  color: #666;
+}
+
+.cart-icon,
+.total-qty {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+@media (max-width: 800px) {
+  form {
+    flex: 100%;
+  }
+
+  .cart {
+    flex-basis: 100%;
+  }
+
+  .form-control-group:last-child {
+    flex-direction: column;
+    gap: 0;
+  }
+}
