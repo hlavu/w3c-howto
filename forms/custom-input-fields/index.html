@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom input fields</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h3>1. Input field with icon</h3>
+      <div class="container">
+        <div class="icon-field">
+          <span>
+            <i class="fa fa-user icon"></i>
+          </span>
+          <input type="text" placeholder="Username" />
+        </div>
+        <div class="icon-field">
+          <span>
+            <i class="fa fa-key icon"></i>
+          </span>
+          <input type="password" placeholder="Password" />
+        </div>
+      </div>
+      <h3>2. Hide arrow of input type number</h3>
+      <div class="container">
+        <div class="before">
+          <p>Before:</p>
+          <input type="number" name="number" id="number" value="1" />
+        </div>
+        <div class="after">
+          <p>Hide arrows:</p>
+          <input type="number" name="number" id="hide-arr" value="10" />
+        </div>
+      </div>
+      <h3>3. Copy text to clipboard</h3>
+      <div class="container">
+        <input type="text" value="Hello world!" id="copy-target" />
+        <div class="btn-box">
+          <button class="btn copy-btn" onclick="copyText()">Copy text</button>
+          <span class="tooltip">Copy to clipboard</span>
+        </div>
+      </div>
+      <h3>4. Animated search</h3>
+      <div class="container">
+        <div class="anim-search-box">
+          <span>
+            <i class="fa fa-search icon"></i>
+          </span>
+          <input type="text" placeholder="Search.." id="anim-input" />
+        </div>
+      </div>
+      <h3>5. Toggle switch</h3>
+      <div class="container">
+        <div class="rectangle-switch">
+          <div class="rectangle-box">
+            <div class="btn square-btn"></div>
+          </div>
+          <div class="rectangle-box rectangle-box__on">
+            <div class="btn square-btn"></div>
+          </div>
+        </div>
+        <div class="pill-switch">
+          <div class="pill-box">
+            <div class="btn round-btn"></div>
+          </div>
+          <div class="pill-box pill-box__on">
+            <div class="btn round-btn"></div>
+          </div>
+        </div>
+      </div>
+      <h3>6. Toggle password visibility</h3>
+      <div class="container show-pw-bx">
+        <div class="icon-field">
+          <span>
+            <i class="fa fa-key icon"></i>
+          </span>
+          <input
+            id="pw-field"
+            type="password"
+            placeholder="Password"
+            value="helloword1234"
+          />
+        </div>
+        <div class="input-control-group">
+          <input type="checkbox" name="show-pw" id="show-pw" />
+          <label for="show-pw">Show password</label>
+        </div>
+      </div>
+    </div>
+    <script>
+      // copy text
+      const target = document.querySelector("#copy-target");
+      const tooltip = document.querySelector(".tooltip");
+
+      const clear = () => {
+        tooltip.innerHTML = "Copy to clipboard";
+      };
+
+      const copyText = () => {
+        if (target.value !== "") {
+          // select text
+          target.select();
+          tooltip.innerHTML = target.value;
+        } else {
+          tooltip.innerHTML = "Copy to clipboard";
+        }
+      };
+
+      target.addEventListener("input", clear);
+
+      //  switcher
+      const rectangleSwitch = document.querySelectorAll(".rectangle-box");
+      const pillSwitch = document.querySelectorAll(".pill-box");
+
+      rectangleSwitch.forEach((rect) => {
+        rect.addEventListener("click", () => {
+          rect.classList.toggle("rectangle-box__on");
+        });
+      });
+      pillSwitch.forEach((pill) => {
+        pill.addEventListener("click", () => {
+          pill.classList.toggle("pill-box__on");
+        });
+      });
+
+      //   show password
+      const showPWBtn = document.querySelector("#show-pw");
+      const pwInput = document.querySelector("#pw-field");
+
+      showPWBtn.addEventListener("change", () => {
+        if (showPWBtn.checked) {
+          pwInput.type = "text";
+        } else {
+          pwInput.type = "password";
+        }
+      });
+    </script>
+  </body>
+</html>
