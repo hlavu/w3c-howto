@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ddd;
+}
+
+.wrapper,
+.finish {
+  width: 650px;
+  max-width: 100%;
+  padding: 50px 20px 60px;
+  margin: 100px auto;
+  background: #fff;
+  position: relative;
+}
+
+.container {
+  display: none;
+  margin: auto;
+}
+
+.container.active {
+  display: block;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 8px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
+.invalid {
+  background: rgba(237, 43, 42, 0.2);
+}
+
+.btn-group {
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.btn {
+  width: 100px;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  opacity: 0.7;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn ~ .btn {
+  margin-left: 10px;
+}
+
+.next-btn {
+  background: #31c55d;
+}
+
+.prev-btn {
+  background: #666;
+  display: none;
+}
+
+.tab-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.round-btn {
+  width: 16px;
+  height: 16px;
+  background: #bbb;
+  display: inline-block;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.round-btn.valid {
+  background: #31c55d;
+  opacity: 0.5;
+}
+.round-btn.active.valid {
+  background: #24a74b;
+}
+
+.round-btn.active {
+  opacity: 1;
+}
+
+.round-btn ~ .round-btn {
+  margin-left: 5px;
+}
+
+.finish {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+  color: #24a74b;
+  font-weight: bold;
+}
+
+.finish .fa-solid {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 40px;
+}

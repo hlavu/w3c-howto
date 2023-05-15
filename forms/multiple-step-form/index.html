@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple step form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Register:</h1>
+
+      <div class="container active">
+        <p>Name:</p>
+        <input type="text" placeholder="First name..." />
+        <input type="text" placeholder="Last name..." />
+      </div>
+      <div class="container">
+        <p>Contact Info:</p>
+        <input type="email" placeholder="E-mail..." />
+        <input type="text" placeholder="Phone..." />
+      </div>
+
+      <div class="container">
+        <p>Birthday:</p>
+        <input type="text" placeholder="dd" />
+        <input type="text" placeholder="mm" />
+        <input type="text" placeholder="yyyy" />
+      </div>
+      <div class="container">
+        <p>Login Info:</p>
+        <input type="text" placeholder="Username..." />
+        <input type="password" placeholder="Password..." />
+      </div>
+      <div class="btn-group">
+        <button class="btn prev-btn">Previous</button>
+        <button class="btn next-btn">Next</button>
+      </div>
+      <div class="tab-btn">
+        <span class="round-btn active"></span><span class="round-btn"></span
+        ><span class="round-btn"></span><span class="round-btn"></span>
+      </div>
+    </div>
+    <div class="finish">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>You have registered successfully!</span>
+    </div>
+    <script>
+      const finish = document.querySelector(".finish");
+      const wrapper = document.querySelector(".wrapper");
+      const tabList = document.querySelectorAll(".container");
+      const currentTab = document.querySelector(".active");
+
+      const nextBtn = document.querySelector(".next-btn");
+      const prevBtn = document.querySelector(".prev-btn");
+      const tabBtnList = document.querySelectorAll(".round-btn");
+
+      let currentTabIdx = 0;
+      let isValid = false;
+
+      const renderUI = (tabIdx) => {
+        // valid tab
+        if (isValid) {
+          document.querySelector(".round-btn.active").classList.add("valid");
+        }
+
+        document.querySelector(".round-btn.active").classList.remove("active");
+        document.querySelector(".container.active").classList.remove("active");
+
+        // new tab
+        tabBtnList[tabIdx].classList.add("active");
+        tabList[tabIdx].classList.add("active");
+
+        if (tabIdx > 0) {
+          prevBtn.style.display = "inline-block";
+        } else {
+          prevBtn.style.display = "none";
+        }
+        isValid = false;
+      };
+
+      const validateInputField = () => {
+        const inputList = document.querySelectorAll(".active input");
+        isValid = Array.from(inputList).every(
+          (inputElem) => inputElem.value !== ""
+        );
+
+        inputList.forEach((inputElem) => {
+          if (inputElem.value === "") {
+            inputElem.classList.add("invalid");
+            inputElem.addEventListener("input", () => {
+              inputElem.classList.remove("invalid");
+            });
+          }
+        });
+
+        if (isValid) {
+          currentTabIdx++;
+          if (currentTabIdx === 4) {
+            wrapper.style.display = "none";
+            finish.style.display = "block";
+          } else {
+            renderUI(currentTabIdx);
+          }
+        }
+      };
+
+      nextBtn.addEventListener("click", validateInputField);
+      prevBtn.addEventListener("click", () => {
+        renderUI(--currentTabIdx);
+      });
+    </script>
+  </body>
+</html>
