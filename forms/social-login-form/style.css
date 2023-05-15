@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 10px;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.form-box {
+  border-radius: 4px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.box-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.social-btn,
+form {
+  flex: 2;
+}
+
+.or-line {
+  margin: 0 50px;
+  width: 4px;
+  background: #ddd;
+  position: relative;
+}
+
+.or-line:after {
+  content: "or";
+  position: absolute;
+  background: #f2f2f2;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-btn .btn {
+  color: #fff;
+  font-size: 18px;
+  text-align: left;
+}
+.social-btn .btn .fa {
+  padding-right: 4px;
+}
+.fb-btn {
+  background: #5670a5;
+}
+
+.twt-btn {
+  background: #6cb6ef;
+}
+
+.gg-btn {
+  background: #e06455;
+}
+.mb-text {
+  display: none;
+}
+
+form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 18px;
+}
+
+form input ~ input,
+.login-btn {
+  margin-top: 15px;
+}
+
+.login-btn {
+  background: #27b581;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+}
+
+.btn-group {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-group .btn {
+  background: #666;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 0;
+  flex: 50%;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  .box-content {
+    gap: 10px;
+  }
+  .social-btn,
+  form {
+    flex: 100%;
+  }
+
+  .mb-text {
+    display: block;
+  }
+
+  .or-line {
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+    background: unset;
+    font-size: 18px;
+  }
+
+  .or-line:after {
+    display: none;
+  }
+
+  .box-content {
+    padding: 10px;
+  }
+
+  .btn-group .btn {
+    flex: 100%;
+  }
+}
