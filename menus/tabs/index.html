@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Responsive tabs</h2>
+      <div class="responsive-tab">
+        <ul class="response-nav">
+          <li class="active">Hanoi</li>
+          <li>Paris</li>
+          <li>Tokyo</li>
+        </ul>
+        <div class="response-content">
+          <div class="content-item active">
+            <p>Hanoi</p>
+            <p>Hanoi is the capital of Vietnam.</p>
+          </div>
+          <div class="content-item">
+            <p>Paris</p>
+            <p>Paris is the capital of France.</p>
+          </div>
+          <div class="content-item">
+            <p>Tokyo</p>
+            <p>London is the capital of Japan.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Tabs header</h2>
+    </div>
+    <script>
+      const tabList = document.querySelectorAll(".response-nav li");
+      const contentList = document.querySelectorAll(".content-item");
+
+      tabList.forEach((elem, idx) => {
+        elem.addEventListener("click", () => {
+          document
+            .querySelector(".response-nav li.active")
+            .classList.remove("active");
+          elem.classList.add("active");
+          document
+            .querySelector(".content-item.active")
+            .classList.remove("active");
+
+          contentList[idx].classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
