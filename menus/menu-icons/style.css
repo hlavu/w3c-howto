@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-bar {
+  display: flex;
+}
+
+.icon-bar a {
+  flex: 1;
+  text-decoration: none;
+  padding: 15px 20px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.icon-bar .active {
+  background: #309d56 !important;
+}
+
+.icon-bar a:hover {
+  background: #000;
+}
+
+.icon-bar .fa {
+  font-size: 35px;
+}
+
+.content {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  background: #eee;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 40px 10px 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  padding: 10px;
+}
+/*  div icon */
+
+.div-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.normal-list,
+.anim-list {
+  text-align: center;
+  cursor: pointer;
+}
+
+.item {
+  width: 50px;
+  height: 8px;
+  margin: 4px;
+  background: #000;
+  transition: 0.6s;
+}
+
+.change div:nth-child(2) {
+  opacity: 0;
+}
+.change div:first-child {
+  transform: rotate(-45deg) translate(-8px, 9px);
+}
+.change div:last-child {
+  transform: rotate(45deg) translate(-8px, -9px);
+}
+
+.accordion {
+  width: 700px;
+  max-width: 100%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn .fa {
+  padding-right: 10px;
+  color: #777;
+}
+
+.btn .fa-minus {
+  display: none;
+}
+
+.section {
+  font-size: 18px;
+  padding: 20px 10px;
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.btn.active span > i:first-child {
+  display: none;
+}
+.btn.active span > i:last-child {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .icon-bar {
+    flex-direction: column;
+    width: 80px;
+  }
+  .menu-icon {
+    flex-direction: row;
+  }
+  .content {
+    flex: 1;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu icons</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="menu-icon">
+        <div class="icon-bar">
+          <a href="#" class="active"><i class="fa fa-home"></i></a>
+          <a href="#"><i class="fa fa-search"></i></a>
+          <a href="#"><i class="fa fa-envelope"></i></a>
+          <a href="#"><i class="fa fa-globe"></i></a>
+          <a href="#"><i class="fa fa-trash"></i></a>
+        </div>
+        <div class="content">Resize screen to see the responsiveness.</div>
+      </div>
+      <h2>Menu icon from div</h2>
+      <div class="div-icon">
+        <p>Normal menu icon</p>
+        <div class="normal-list">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+
+        <p>Animation menu icon (click on it)</p>
+
+        <div class="anim-list">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+      <h2>Accordion (collapsible content)</h2>
+      <div class="accordion">
+        <button class="btn">
+          <p>Murayama</p>
+          <span>
+            <i class="fa fa-plus"></i>
+            <i class="fa fa-minus"></i>
+          </span>
+        </button>
+        <div class="section">
+          He was the first to withstand 100 hits and beat all his opponents
+          back, this feat made him the first Oya High's head. Due to an incident
+          involving Furuya and Chiharu, It led to the conflict of Sannoh Hoodlum
+          Squad and Oya High
+        </div>
+        <button class="btn">
+          <p>Todoroki</p>
+          <span>
+            <i class="fa fa-plus"></i>
+            <i class="fa fa-minus"></i>
+          </span>
+        </button>
+        <div class="section">
+          Todoroki is a neat looking person. He has a fierce and glaring eyes.
+          He is seen wearing glasses and a uniform most of the time. His hair is
+          combed properly to the side. He has an appearance of an innocent
+          person that could easily be picked on, however, it is quite the
+          opposite.
+        </div>
+        <button class="btn">
+          <p>Fujio</p>
+          <span>
+            <i class="fa fa-plus"></i>
+            <i class="fa fa-minus"></i>
+          </span>
+        </button>
+        <div class="section">
+          Fujio is an extremely charismatic and friendly individual. His
+          outgoing personality inspires positivity around him, which makes
+          everyone gather around him. He involuntary united the full-time
+          students after his arrival.
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // animated btn
+    const animBtn = document.querySelector(".anim-list");
+    animBtn.addEventListener("click", () => {
+      animBtn.classList.toggle("change");
+    });
+
+    // accordion
+    const btnList = document.querySelectorAll(".accordion .btn");
+    const subBtn = document.querySelectorAll(".accordion .btn .fa");
+    const sectionList = document.querySelectorAll(".accordion .section");
+
+    btnList.forEach((btn, idx) => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        sectionList[idx].classList.toggle("active");
+      });
+    });
+  </script>
+</html>
