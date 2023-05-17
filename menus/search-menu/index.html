@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search menu</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Search menu</h1>
+
+      <div class="container">
+        <div class="navbar">
+          <h2>Menu</h2>
+
+          <input type="text" id="search" placeholder="Search.." />
+
+          <ul class="item-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <h2>Page content</h2>
+          <p>Type for a specific category inside the search bar to filter.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const listItem = document.querySelectorAll(".item-list li");
+      const input = document.querySelector("#search");
+      const menu = document.querySelector(".item-list");
+
+      input.addEventListener("input", () => {
+        menu.innerHTML = "";
+        let lowerInput = input.value.toLowerCase();
+        listItem.forEach((item) => {
+          let itemText = item.innerText.toLowerCase();
+          if (itemText.indexOf(lowerInput) >= 0) {
+            menu.append(item);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
