@@ -8,28 +8,35 @@ h2 {
   padding: 20px;
 }
 
-.responsive-tab {
-  border: 1px solid #bbb;
+.container {
   width: 800px;
   max-width: 100%;
-  height: 200px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid #bbb;
 }
 
-.response-nav {
-  background: #eee;
-  border-bottom: 1px solid #bbb;
+.responsive-tab {
   display: flex;
+  flex-direction: column;
+  height: 200px;
 }
-.response-nav li {
+
+.nav {
+  background: #eee;
+  display: flex;
+  font-size: 18px;
+}
+.nav li {
   list-style: none;
   padding: 16px 20px;
   cursor: pointer;
 }
-.response-nav li:hover {
+.nav li:hover {
   background: #ddd;
+}
+
+.response-nav {
+  border-bottom: 1px solid #bbb;
 }
 
 .response-nav .active {
@@ -50,7 +57,31 @@ h2 {
 }
 
 .content-item.active {
-  display: block;
+  display: block !important;
+}
+
+.tab-header-content .content-item {
+  text-align: center;
+  display: none;
+  padding: 50px 0;
+}
+
+.tab-header-nav .active,
+.content-item.active {
+  color: #fff;
+}
+
+.tab-header-nav .f.active,
+.content-item.f {
+  background: #bc1717;
+}
+.tab-header-nav .s.active,
+.content-item.s {
+  background: orange;
+}
+.tab-header-nav .t.active,
+.content-item.t {
+  background: green;
 }
 
 @media (max-width: 400px) {

@@ -10,8 +10,8 @@
   <body>
     <div class="wrapper">
       <h2>Responsive tabs</h2>
-      <div class="responsive-tab">
-        <ul class="response-nav">
+      <div class="responsive-tab container">
+        <ul class="response-nav nav">
           <li class="active">Hanoi</li>
           <li>Paris</li>
           <li>Tokyo</li>
@@ -27,16 +27,39 @@
           </div>
           <div class="content-item">
             <p>Tokyo</p>
-            <p>London is the capital of Japan.</p>
+            <p>Tokyo is the capital of Japan.</p>
           </div>
         </div>
       </div>
 
       <h2>Tabs header</h2>
+      <div class="tab-header container">
+        <div class="tab-header-content">
+          <div class="content-item active f">
+            <p>Hanoi</p>
+            <p>Hanoi is the capital of Vietnam.</p>
+          </div>
+          <div class="content-item s">
+            <p>Paris</p>
+            <p>Paris is the capital of France.</p>
+          </div>
+          <div class="content-item t">
+            <p>Tokyo</p>
+            <p>Tokyo is the capital of Japan.</p>
+          </div>
+        </div>
+        <ul class="tab-header-nav nav">
+          <li class="active f">Hanoi</li>
+          <li class="s">Paris</li>
+          <li class="t">Tokyo</li>
+        </ul>
+      </div>
     </div>
     <script>
       const tabList = document.querySelectorAll(".response-nav li");
-      const contentList = document.querySelectorAll(".content-item");
+      const contentList = document.querySelectorAll(
+        ".responsive-tab .content-item"
+      );
 
       tabList.forEach((elem, idx) => {
         elem.addEventListener("click", () => {
@@ -45,10 +68,29 @@
             .classList.remove("active");
           elem.classList.add("active");
           document
-            .querySelector(".content-item.active")
+            .querySelector(".responsive-tab .content-item.active")
             .classList.remove("active");
 
           contentList[idx].classList.add("active");
+        });
+      });
+
+      const tabList2 = document.querySelectorAll(".tab-header-nav li");
+      const contentList2 = document.querySelectorAll(
+        ".tab-header-content .content-item"
+      );
+
+      tabList2.forEach((elem, idx) => {
+        elem.addEventListener("click", () => {
+          document
+            .querySelector(".tab-header-nav li.active")
+            .classList.remove("active");
+          elem.classList.add("active");
+          document
+            .querySelector(".tab-header-content .content-item.active")
+            .classList.remove("active");
+
+          contentList2[idx].classList.add("active");
         });
       });
     </script>
