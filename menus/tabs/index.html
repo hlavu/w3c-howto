@@ -54,11 +54,21 @@
           <li class="t">Tokyo</li>
         </ul>
       </div>
+      <h2>Hover side nav buttons</h2>
+      <div class="side-nav-container container">
+        <div class="btn about">About</div>
+        <div class="btn blog">Blog</div>
+        <div class="btn project">Projects</div>
+        <div class="btn contact">Contact</div>
+        <p class="text">
+          Hover over the buttons in the left side nav to open them.
+        </p>
+      </div>
     </div>
     <script>
       const tabList = document.querySelectorAll(".response-nav li");
       const contentList = document.querySelectorAll(
-        ".responsive-tab .content-item"
+        ".response-content .content-item"
       );
 
       tabList.forEach((elem, idx) => {
@@ -68,7 +78,7 @@
             .classList.remove("active");
           elem.classList.add("active");
           document
-            .querySelector(".responsive-tab .content-item.active")
+            .querySelector(".response-content .content-item.active")
             .classList.remove("active");
 
           contentList[idx].classList.add("active");

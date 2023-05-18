@@ -18,7 +18,7 @@ h2 {
 .responsive-tab {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 180px;
 }
 
 .nav {
@@ -47,6 +47,12 @@ h2 {
   display: none;
   padding: 20px 10px;
 }
+
+.response-content .content-item.active {
+  display: inline-block;
+  color: #000;
+}
+
 .content-item p {
   font-size: 18px;
 }
@@ -56,14 +62,14 @@ h2 {
   margin-bottom: 20px;
 }
 
-.content-item.active {
+.tab-header-content .content-item.active {
   display: block !important;
 }
 
 .tab-header-content .content-item {
   text-align: center;
   display: none;
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 .tab-header-nav .active,
@@ -84,6 +90,48 @@ h2 {
   background: green;
 }
 
+.side-nav-container {
+  overflow: hidden;
+  position: relative;
+}
+.side-nav-container .btn {
+  width: 130px;
+  padding: 15px;
+  padding-right: 20px;
+  color: #fff;
+  margin: 10px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 20px;
+  transition: 0.3s;
+  transform: translateX(-65%);
+  cursor: pointer;
+}
+
+.side-nav-container p {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-30%, -50%);
+  text-align: center;
+  font-size: 18px;
+}
+
+.side-nav-container .btn:hover {
+  transform: translateX(0);
+}
+
+.btn.about {
+  background: #04aa6d;
+}
+.btn.blog {
+  background: #2196f3;
+}
+.btn.project {
+  background: #f44336;
+}
+.btn.contact {
+  background: #555555;
+}
 @media (max-width: 400px) {
   .responsive-tab {
     flex-direction: row;
