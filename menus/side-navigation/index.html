@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side navigation</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul class="side-bar">
+        <li>About</li>
+        <li>Services</li>
+        <li>Clients</li>
+        <li>Contact</li>
+        <span class="close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+      </ul>
+
+      <div class="btn-group">
+        <button class="btn nav-overlay">Sidenav overlay</button>
+
+        <button class="btn push-off">Sidenav push(off-canvas)</button>
+        <button class="btn push-op">Sidenav push w/opacity</button>
+        <button class="btn full-width">Sidenav full-width</button>
+      </div>
+    </div>
+    <script>
+      const sideNav = document.querySelector(".side-bar");
+      const btnGroup = document.querySelector(".btn-group");
+      const wrapper = document.querySelector(".wrapper");
+      // btn
+      const closeBtn = document.querySelector(".close-btn");
+      const overlayNav = document.querySelector(".nav-overlay");
+      const pushNav = document.querySelector(".push-off");
+      const pushNavOp = document.querySelector(".push-op");
+      const fullWidth = document.querySelector(".full-width");
+
+      closeBtn.addEventListener("click", () => {
+        sideNav.style.width = "0";
+        sideNav.style.opacity = "0";
+        btnGroup.style.marginLeft = "0";
+        wrapper.style.backgroundColor = "#ddd";
+      });
+
+      overlayNav.addEventListener("click", () => {
+        sideNav.style.width = "350px";
+        sideNav.style.opacity = "1";
+      });
+      pushNav.addEventListener("click", () => {
+        sideNav.style.width = "350px";
+        sideNav.style.opacity = "1";
+        btnGroup.style.marginLeft = "350px";
+      });
+      pushNavOp.addEventListener("click", () => {
+        sideNav.style.width = "350px";
+        sideNav.style.opacity = "1";
+        btnGroup.style.marginLeft = "350px";
+        wrapper.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+      });
+      fullWidth.addEventListener("click", () => {
+        sideNav.style.width = "100%";
+        sideNav.style.opacity = "1";
+      });
+    </script>
+  </body>
+</html>
