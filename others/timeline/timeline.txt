@@ -1,0 +1,11 @@
+1. structure
+    -wrapper
+        --timeline: relative
+                ---container (left + right): relative
+                        ----content
+
+2. Style
+timeline:after : style for the timeline (vertical ruler)
+container:after: circles on timeline
+
+left:before + right:before: arrow for content box
