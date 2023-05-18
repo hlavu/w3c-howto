@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="slide-down container">
+    <div class="shrink-navbar container">
       <ul class="navbar">
         <li>Home</li>
         <li>News</li>
@@ -18,7 +18,7 @@
         <div class="btn-group">
           <button class="btn">Slide down to view navbar</button>
           <button class="btn">Scroll to hide nav bar</button>
-          <button class="btn">Sticky nav bar</button>
+          <button class="btn">Shrink nav bar</button>
         </div>
         <h3>Slide down to view navbar</h3>
         <p>
@@ -53,13 +53,69 @@
       </div>
     </div>
     <script>
-      const slideNavbar = document.querySelector(".slide-down .navbar");
-      const hideNavbar = document.querySelector(".hide-navbar .navbar");
+      const container = document.querySelector(".container");
+      const navbar = document.querySelector(".navbar");
+      let slideNavbar;
+      let hideNavbar;
+      let shrinkNavbar = document.querySelector(".shrink-navbar .navbar");
+
+      const btnList = document.querySelectorAll(".btn");
+
+      btnList.forEach((btn, idx) => {
+        btn.addEventListener("click", () => {
+          console.log(...container.classList, idx);
+          navbar.style.top = 0;
+
+          container.classList.remove(...container.classList);
+          switch (idx) {
+            case 1:
+              container.classList.add("hide-navbar", "container");
+              hideNavbar = document.querySelector(".hide-navbar .navbar");
+
+              break;
+
+            case 2:
+              container.classList.add("shrink-navbar", "container");
+              shrinkNavbar = document.querySelector(".shrink-navbar .navbar");
+              break;
+
+            default:
+              container.classList.add("slide-down", "container");
+              slideNavbar = document.querySelector(".slide-down .navbar");
+              break;
+          }
+        });
+      });
+
       window.addEventListener("scroll", (e) => {
-        if (document.documentElement.scrollTop > 20) {
-          slideNavbar.style.top = 0;
-        } else {
-          slideNavbar.style.top = "-60px";
+        console.log(slideNavbar, hideNavbar, shrinkNavbar);
+
+        // slide down
+        if (slideNavbar) {
+          if (document.documentElement.scrollTop > 20) {
+            slideNavbar.style.top = 0;
+          } else {
+            slideNavbar.style.top = "-60px";
+          }
+        }
+
+        //  scroll to hide
+
+        if (hideNavbar) {
+          if (document.documentElement.scrollTop > 20) {
+            hideNavbar.style.top = "-60px";
+          } else {
+            hideNavbar.style.top = 0;
+          }
+        }
+
+        //  shrink navbar
+        if (shrinkNavbar) {
+          if (document.documentElement.scrollTop > 20) {
+            shrinkNavbar.style.padding = 0;
+          } else {
+            shrinkNavbar.style.padding = "50px 0";
+          }
         }
       });
     </script>

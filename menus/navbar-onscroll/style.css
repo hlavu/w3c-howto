@@ -41,13 +41,40 @@ p {
 
 .content {
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
 }
 
 .slide-down .navbar {
   top: -60px;
+  padding: 0 !important;
+}
+
+.hide-navbar .navbar {
+  padding: 0 !important;
+}
+.shrink-navbar .navbar {
+  padding: 50px 0;
+  /* top: 0 !important; */
+}
+
+.shrink-navbar .content {
+  padding-top: 150px;
 }
 
 .btn {
   display: block;
+  margin: 15px auto;
+  width: 300px;
+  outline: none;
+  border: none;
+  background: #333;
+  padding: 15px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
