@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress bars</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="scroll-indicator">
+        Scroll Indicator
+        <div class="range">
+          <div class="range-slider"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const rangeSlider = document.querySelector(".range-slider");
+      let scrollH = document.documentElement.offsetHeight / 2;
+      window.addEventListener("scroll", (e) => {
+        let percentW = Math.round(
+          (document.documentElement.scrollTop / scrollH) * 100
+        );
+
+        rangeSlider.style.width = `${percentW}%`;
+      });
+    </script>
+  </body>
+</html>
