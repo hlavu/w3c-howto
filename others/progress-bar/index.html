@@ -15,8 +15,17 @@
           <div class="range-slider"></div>
         </div>
       </div>
+
+      <h2>JS progress bar</h2>
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div class="progress-bar-range">0%</div>
+        </div>
+        <button class="btn">Run</button>
+      </div>
     </div>
     <script>
+      // scroll indicator
       const rangeSlider = document.querySelector(".range-slider");
       let scrollH = document.documentElement.offsetHeight / 2;
       window.addEventListener("scroll", (e) => {
@@ -25,6 +34,26 @@
         );
 
         rangeSlider.style.width = `${percentW}%`;
+      });
+
+      // progress bar
+      const runBtn = document.querySelector(".progress-bar-container .btn");
+      const progressBarRange = document.querySelector(".progress-bar-range");
+      let percent = 0;
+
+      runBtn.addEventListener("click", () => {
+        progressBarRange.style.width = 0;
+        progressBarRange.innerHTML = `0%`;
+        percent = 0;
+
+        let id = setInterval(() => {
+          percent++;
+          if (percent === 100) {
+            clearInterval(id);
+          }
+          progressBarRange.style.width = `${percent}%`;
+          progressBarRange.innerHTML = `${percent}%`;
+        }, 10);
       });
     </script>
   </body>
